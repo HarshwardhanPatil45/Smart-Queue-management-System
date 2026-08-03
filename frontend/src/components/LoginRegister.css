@@ -1,0 +1,255 @@
+/* LoginRegister.css */
+
+/* 1. Unique "Smart Hospital" Cinematic Background */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    overflow: hidden;
+
+    /* The Image & Gradient Overlay */
+    background: 
+        linear-gradient(135deg, rgba(61, 67, 79, 0.9), rgba(88, 93, 94, 0.85)), 
+        url("../images/bck.jpg");
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply; 
+
+    /* Animation */
+    animation: slowZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+    0% { background-size: 100% 100%; }
+    100% { background-size: 115% 115%; }
+}
+
+/* 2. The Main Card - Light Grey Transparent Style */
+.login-card {
+    /* ✅ CHANGED: Light Grey Transparent Background */
+    background: rgba(225, 228, 232, 0.75); 
+    
+    width: 100%;
+    max-width: 420px;
+    padding: 45px;
+    border-radius: 24px;
+    
+    /* Blur behind the card */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Border and Shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle shine animation on the card */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    animation: shine 8s infinite;
+}
+
+@keyframes shine {
+    0%, 90% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* 3. Typography */
+.login-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+
+    /* Gradient text with standard + webkit properties */
+    background: linear-gradient(#0056b3, #00c6ff);
+    -webkit-background-clip: text; /* Chrome, Safari */
+    background-clip: text;         /* Standard */
+    -webkit-text-fill-color: transparent; /* Chrome, Safari */
+    color: transparent;            /* Fallback */
+}
+
+
+/* 4. Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 12px;
+    font-size: 15px;
+    
+    /* ✅ CHANGED: Inputs are white to pop against grey card */
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #333;
+    
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    box-sizing: border-box;
+}
+
+.custom-input::placeholder {
+    color: #777;
+}
+
+.custom-input:focus {
+    background-color: #ffffff;
+    outline: none;
+    border-color: #0072ff;
+    box-shadow: 0 5px 15px rgba(0, 114, 255, 0.2);
+}
+
+.role-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230072ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 18px;
+}
+
+/* 5. Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, #0056b3, #0072ff);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* 6. Utilities */
+.error-msg {
+    color: #721c24;
+    background-color: rgba(255, 245, 245, 0.9);
+    border-left: 4px solid #ff4d4d;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    animation: shake 0.4s ease-in-out;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+    color: #555; /* Darker grey divider */
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #999;
+}
+
+.divider:not(:empty)::before { margin-right: 15px; }
+.divider:not(:empty)::after { margin-left: 15px; }
+
+.google-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    /* ✅ CHANGED: Dark grey text so it is visible on light grey card */
+    color: #333; 
+    font-weight: 500;
+}
+
+.toggle-link {
+    color: #0056b3;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.toggle-link:hover {
+    color: #0072ff;
+}
+
+.toggle-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #0072ff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.toggle-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* 7. Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}

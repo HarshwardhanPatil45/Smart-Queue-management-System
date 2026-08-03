@@ -1,0 +1,134 @@
+/* Full Page Background */
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    /* ✅ Background Image + Gradient Overlay */
+    background: 
+        linear-gradient(rgba(31, 41, 55, 0.7), rgba(44, 62, 80, 0.7)), /* Dark overlay for readability */
+        url('../images/admin.jpg'); /* Make sure the image is in src/images folder */
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Cover entire screen */
+    background-blend-mode: multiply; /* Blend gradient and image */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card */
+.admin-card {
+    width: 360px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Titles */
+.admin-title {
+    color: #dc3545;
+    margin-bottom: 8px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.admin-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* Form */
+.admin-form {
+    text-align: left;
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: 0.25s;
+}
+
+.form-group input:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220,53,69,0.15);
+}
+
+/* Button */
+.admin-btn {
+    width: 100%;
+    padding: 13px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+.admin-btn:hover {
+    background: #b52a37;
+    transform: translateY(-1px);
+}
+
+/* Patient link */
+.patient-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.link-text {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+    .admin-card {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .admin-title {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,208 @@
+.doctor-container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+  font-family:Arial, sans-serif;
+}
+
+.doctor-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom:30px;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.badge{
+  background:#e9ecef;
+  padding:5px 12px;
+  border-radius:20px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.logout-btn{
+  background:#dc3545;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.doctor-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  min-height:450px;
+}
+
+.primary{ color:#007bff; }
+
+.center-box{
+  text-align:center;
+  padding:20px;
+}
+
+.gray{ color:#999; }
+
+.token-big{
+  font-size:60px;
+  font-weight:bold;
+  color:#007bff;
+  background:#e3f2fd;
+  padding:10px 40px;
+  border-radius:10px;
+  display:inline-block;
+}
+
+.btn-group{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:20px;
+}
+
+.prescription-btn{
+  background:#6610f2;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.complete-btn{
+  background:#28a745;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.next-btn{
+  background:#007bff;
+  color:white;
+  border:none;
+  padding:15px 30px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.queue-item{
+  border-bottom:1px solid #eee;
+  padding:10px 0;
+}
+
+.token-small{
+  background:#e9ecef;
+  padding:3px 8px;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+/* ===== MODAL ===== */
+
+.modal-overlay{
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.modal-content{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  width:500px;
+  max-width:95%;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.modal-content input,
+.modal-content textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.modal-actions{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.download-btn{
+  background:#ffc107;
+  border:none;
+  padding:10px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+  flex:1;
+}
+
+.send-btn{
+  background:#28a745;
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+  flex:1;
+}
+
+.cancel-btn{
+  background:#dc3545;
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+  flex:1;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width:768px){
+  .doctor-grid{
+    grid-template-columns:1fr;
+  }
+
+  .doctor-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .modal-content{
+    width:90%;
+  }
+}
